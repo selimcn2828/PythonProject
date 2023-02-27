@@ -150,43 +150,12 @@ pred = detect_anomalies(preds[0])
 
 # In[20]:
 
-
-# Finalde günlük anomali detection yapabiliyoruz. Bunu tüm KPI setlerine yedirmek lazım.
-# Sezonsallık ve tatil günlerini modelimiz dikkate alıyor (maç günlerini de ekleyeiblirsin 
-    # link --> (https://facebook.github.io/prophet/docs/seasonality,_holiday_effects,_and_regressors.html#modeling-holidays-and-special-events)
-
 # ADD last 30 days trend info in a "trend_info" column 
-    # how to get last 30 days trend info --> OLS (ordinary least square) bir şekilde trendin yönünü öğren (açıya bakabilirsin) -- KPI türüne dikkat
+    # how to get last 30 days trend info --> OLS (ordinary least square).
 
 pred.sample(32)
 
 
-# References:
-# * http://www-personal.umich.edu/~mejn/cp/programs.html
-# * https://towardsdatascience.com/anomaly-detection-time-series-4c661f6f165f
-# * https://github.com/altair-viz/altair/issues/1270
-# 
-
-# **NOTE:**
-# 
-# * Otomatize etmek için:
-# 
-# -- Datanın hazırlanması
-# * Data'nın otomatik alınması
-#     * DB'ye direk erişimin olucak oraya sql atıcan ya da günlük olarak dosyayı ilgili kişi bir yere atıcak sen de ftp ile otomatik alıcan.
-# 
-# -- Model
-# * Model'i kur ama her defasında train etme, yani modelinin dump'ını alarak modeli kaydet böylece zamandan kazanmış olursun. (modele ilk adımda ds-y)
-#     * KPI bazlı yapmak için döngü yazmak şart.
-#     * For döngüsünden kurtulmak için Spark Prophet'ı araştırırsan çözümü bulursun. (çok çok sonra)
-#     
-# * Sonuçları log halinde bir tabloya basman şart (tablo izini vs Elif hanım'dan talep et)
-# 
-# -- DAG
-# * Bu bütün adımları her gün çalışıcak şekilde yapman için de Airflow'da dag yazılması lazım. 
-#     * Bunun için de Nuhi abi & Veli abi (Gökhan abinin takımı) vs destek için Elif hanım ile görüş
-# 
-# * Çıktıları nasıl göstericeğin noktasında çalışman lazım. (tableu)
 
 # In[ ]:
 
